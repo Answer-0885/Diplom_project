@@ -1,5 +1,5 @@
 import modal from './modules/modal'
-import two from './modules/two'
+import timer from './modules/timer'
 
 modal()
-two()
+timer('01:00 22 january 2022')
