@@ -5,10 +5,6 @@ const timer = (deadLine) => {
    const timerMinutes = document.querySelector('.count_3>span');
    const timerSeconds = document.querySelector('.count_4>span');
 
-   console.log(timerHours)
-   console.log(timerMinutes)
-   console.log(timerSeconds)
-   console.log(timerDays)
 
    const getTimeRemaining = () => {
       let dateStop = new Date(deadLine).getTime();
