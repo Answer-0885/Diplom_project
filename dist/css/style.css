@@ -1600,6 +1600,11 @@ input.error {
   width: 100%;
   max-width: 185px;
 }
+.swiper-slide {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 
 .benefits-arrows {
   display: flex;

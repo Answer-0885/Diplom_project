@@ -16,7 +16,7 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/timer */ \"./modules/timer.js\");\n\n\n\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\n;(0,_modules_timer__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('01:00 22 january 2022')\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/timer */ \"./modules/timer.js\");\n/* harmony import */ var _modules_swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/swiper */ \"./modules/swiper.js\");\n/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/smoothScroll */ \"./modules/smoothScroll.js\");\n\n\n\n\n\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\n;(0,_modules_timer__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('01:00 22 january 2022')\n;(0,_modules_swiper__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\n;(0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_3__[\"default\"])()\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -27,6 +27,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\nconst modal = () => {\n   const modalBtn = document.querySelector('.button');\n   const modalWindow = document.querySelector('.header-modal');\n   const modalClose = document.querySelector('.header-modal__close');\n   const overlay = document.querySelector('.overlay');\n\n\n   modalBtn.addEventListener('click', () => {\n      modalWindow.style.display = 'flex';\n      overlay.style.display = 'flex';\n   });\n\n   modalClose.addEventListener('click', () => {\n      modalWindow.style.display = 'none';\n      overlay.style.display = 'none';\n   });\n\n   overlay.addEventListener('click', (e) => {\n      if (!e.target.closest('.header-modal') || e.target.classList.contains('.header-modal__close')) {\n         modalWindow.style.display = 'none';\n         overlay.style.display = 'none';\n      }\n   });\n\n\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\n\n//# sourceURL=webpack:///./modules/modal.js?");
+
+/***/ }),
+
+/***/ "./modules/smoothScroll.js":
+/*!*********************************!*\
+  !*** ./modules/smoothScroll.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\nconst smoothScroll = () => {\r\n   const smoothScroll = document.querySelector('.smooth-scroll');\r\n\r\n   smoothScroll.addEventListener('click', () => {\r\n\r\n   })\r\n}\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (smoothScroll);\n\n//# sourceURL=webpack:///./modules/smoothScroll.js?");
+
+/***/ }),
+
+/***/ "./modules/swiper.js":
+/*!***************************!*\
+  !*** ./modules/swiper.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\n// import Swiper, {\r\n//    Autoplay\r\n// } from 'swiper';\r\n\r\n// Swiper.use([Autoplay]);\r\n\r\n// autoplay: {\r\n//    delay: 2500,\r\n//    disableOnInteraction: false,\r\n// },\r\nconst swiper = new Swiper('.swiper', {\r\n   navigation: {\r\n      nextEl: '.benefits__arrow--right',\r\n      prevEl: '.benefits__arrow--left',\r\n   },\r\n   breakpoints: {\r\n\r\n      // when window width is >= 576px\r\n      576: {\r\n         slidesPerView: 3,\r\n         spaceBetween: 40\r\n      }\r\n   }\r\n});\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (swiper);\n\n//# sourceURL=webpack:///./modules/swiper.js?");
 
 /***/ }),
 
