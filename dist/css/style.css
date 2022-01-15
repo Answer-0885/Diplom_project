@@ -502,7 +502,6 @@ input.error {
 .benefits-inner {
   text-align: center;
 }
-
 .benefit-image {
   margin-bottom: 22px;
 }
@@ -1604,11 +1603,6 @@ input.error {
 .benefits__item {
   width: 100%;
   max-width: 185px;
-}
-.swiper-slide {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
 }
 
 .benefits-arrows {
