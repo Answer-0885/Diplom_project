@@ -1661,7 +1661,9 @@ input.error {
 .count > span {
   font-size: 24px;
 }
-
+.smooth{
+    opacity: 0;
+}
 .smooth-scroll {
   position: fixed;
   right: 25px;

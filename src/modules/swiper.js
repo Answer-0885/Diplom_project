@@ -1,26 +1,24 @@
 'use strict'
-// import Swiper, {
-//    Autoplay
-// } from 'swiper';
 
-// Swiper.use([Autoplay]);
+const swiper = () => {
+   const swiper1 = new Swiper('.swiper', {
+      navigation: {
+         nextEl: '.benefits__arrow--right',
+         prevEl: '.benefits__arrow--left',
+      },
+      loop: true,
+      autoplay: {
+         delay: 2500,
+         disableOnInteraction: false,
+      },
+      breakpoints: {
 
-// autoplay: {
-//    delay: 2500,
-//    disableOnInteraction: false,
-// },
-const swiper = new Swiper('.swiper', {
-   navigation: {
-      nextEl: '.benefits__arrow--right',
-      prevEl: '.benefits__arrow--left',
-   },
-   breakpoints: {
-
-      // when window width is >= 576px
-      576: {
-         slidesPerView: 3,
-         spaceBetween: 40
+         // Если ширина окна больше или ровна 576px
+         576: {
+            slidesPerView: 3,
+            spaceBetween: 40
+         }
       }
-   }
-});
+   });
+}
 export default swiper
