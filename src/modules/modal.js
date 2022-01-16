@@ -12,7 +12,7 @@ const modal = () => {
    const serviceBtn = document.querySelectorAll('.btn2');
    const serviceBtnClose = document.querySelector('.services-modal__close');
 
-   // Открытие модального окна Вызвать замерщика
+   // Открытие модального окна Вызвать замерщика с анимацией
    serviceBtn.forEach((btn) => {
       btn.addEventListener('click', () => {
          serviceModal.style.display = 'block';
@@ -31,16 +31,16 @@ const modal = () => {
       })
    });
 
-   // При нажатии на крестик или мимо окна - окно закрывается
-   serviceModal.addEventListener('click', (e) => {
-      if (!e.target.closest('.services-modal') || e.target.classList.contains('services-modal__close')) {
+   // При нажатии на крестик или мимо окна Вызвать замерщика - окно закрывается
+   window.addEventListener('click', (e) => {
+      if (e.target.closest('.overlay') || e.target.classList.contains('services-modal__close')) {
          serviceModal.style.display = 'none';
          overlay.style.display = 'none';
          body.style.overflow = 'auto';
       }
    });
 
-   // При нажатии на кнопку появляется модальное окно сверху с анимацией
+   // При нажатии на кнопку Заказать звонок появляется модальное окно сверху с анимацией
    modalBtn.addEventListener('click', () => {
       modalWindow.style.display = 'flex';
       overlay.style.display = 'flex';
