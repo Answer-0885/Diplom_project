@@ -3,14 +3,49 @@ import {
    animate
 } from './helper';
 const modal = () => {
+   //Верхняя кнопка заказать звонок
    const modalBtn = document.querySelector('.button');
    const modalWindow = document.querySelector('.header-modal');
    const overlay = document.querySelector('.overlay');
    const body = document.querySelector('body');
-
+   // Наши услуги
    const serviceModal = document.querySelector('.services-modal');
    const serviceBtn = document.querySelectorAll('.btn2');
-   const serviceBtnClose = document.querySelector('.services-modal__close');
+   // Сертификаты
+   const certificateOpen = document.querySelectorAll('.sertificate-document');
+   const certificateModal = document.querySelector('.img-modal');
+
+   console.log(certificateModal);
+
+   //Открываем сертификаты
+   certificateOpen.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+         e.preventDefault()
+         certificateModal.style.display = 'block';
+         body.style.overflow = 'hidden';
+         overlay.style.display = 'block';
+         animate({
+            duration: 1000,
+            timing(timeFraction) {
+               return timeFraction;
+            },
+            draw(progress) {
+               serviceModal.style.opacity = progress;
+               overlay.style.opacity = progress;
+            }
+         });
+      });
+   });
+   //Закрываем сертификаты
+   window.addEventListener('click', (e) => {
+      if (e.target.closest('.overlay') || e.target.classList.contains('img-modal__close')) {
+         certificateModal.style.display = 'none';
+         body.style.overflow = 'auto';
+         overlay.style.display = 'none';
+      }
+   });
+
+
 
    // Открытие модального окна Вызвать замерщика с анимацией
    serviceBtn.forEach((btn) => {
