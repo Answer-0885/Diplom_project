@@ -4,7 +4,6 @@ const smoothScroll = () => {
    let smoothScrollUp = document.querySelector('.smooth');
    let benefits = document.getElementById('benefits').getBoundingClientRect();
 
-   console.log(benefits);
    // плавная прокрутка scrollа
    smoothScrollUp.addEventListener('click', (e) => {
       e.preventDefault()
