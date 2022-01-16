@@ -2,8 +2,8 @@
 const sliderServices = () => {
    const swiper = new Swiper('.swiper-service', {
       navigation: {
-         nextEl: '.benefits__arrow--right',
-         prevEl: '.benefits__arrow--left',
+         nextEl: '.services__arrow--right',
+         prevEl: '.services__arrow--left',
       },
       loop: true,
       autoplay: {

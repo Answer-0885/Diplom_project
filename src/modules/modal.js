@@ -8,7 +8,22 @@ const modal = () => {
    const overlay = document.querySelector('.overlay');
    const body = document.querySelector('body');
 
-   // При нажатии на кнопку появляется модальное окно с анимацией
+   const serviceModal = document.querySelectorAll('.services-modal');
+   const serviceBtn = document.querySelectorAll('.btn2');
+   const serviceBtnClose = document.querySelector('.services-modal__close');
+
+   // Открытие модального окна Вызвать замерщика
+   serviceBtn.forEach((btn) => {
+      btn.addEventListener('click', () => {
+         //Проверка размера экрана
+         serviceModal.style.display = 'block';
+         //serviceModal.style.opacity = '0';
+      })
+   });
+
+
+
+   // При нажатии на кнопку появляется модальное окно сверху с анимацией
    modalBtn.addEventListener('click', () => {
       modalWindow.style.display = 'flex';
       overlay.style.display = 'flex';
