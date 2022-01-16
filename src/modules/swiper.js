@@ -1,7 +1,7 @@
 'use strict'
 
 const swiper = () => {
-   const swiper1 = new Swiper('.swiper', {
+   const swiper = new Swiper('.swiper', {
       navigation: {
          nextEl: '.benefits__arrow--right',
          prevEl: '.benefits__arrow--left',

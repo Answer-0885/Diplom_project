@@ -5,7 +5,6 @@ import {
 const modal = () => {
    const modalBtn = document.querySelector('.button');
    const modalWindow = document.querySelector('.header-modal');
-   const modalClose = document.querySelector('.header-modal__close');
    const overlay = document.querySelector('.overlay');
    const body = document.querySelector('body');
 
