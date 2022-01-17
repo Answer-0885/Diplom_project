@@ -1,9 +1,9 @@
 'use strict'
 const timer = (deadLine) => {
-   const timerDays = document.querySelector('.count_1>span');
-   const timerHours = document.querySelector('.count_2>span');
-   const timerMinutes = document.querySelector('.count_3>span');
-   const timerSeconds = document.querySelector('.count_4>span');
+   const timerDays = document.querySelectorAll('.count_1>span');
+   const timerHours = document.querySelectorAll('.count_2>span');
+   const timerMinutes = document.querySelectorAll('.count_3>span');
+   const timerSeconds = document.querySelectorAll('.count_4>span');
 
    const getTimeRemaining = () => {
       let dateStop = new Date(deadLine).getTime();
@@ -22,6 +22,7 @@ const timer = (deadLine) => {
          seconds
       }
    };
+
    const updateClock = () => {
       let getTime = getTimeRemaining();
       // Добавляем нули перед цифрами
@@ -30,11 +31,24 @@ const timer = (deadLine) => {
             return '0' + num;
          } else return num;
       };
-      timerDays.textContent = addZero(getTime.days);
-      timerHours.textContent = addZero(getTime.hours);
-      timerMinutes.textContent = addZero(getTime.minutes);
-      timerSeconds.textContent = addZero(getTime.seconds);
 
+      timerDays.forEach(day => {
+         day.textContent = addZero(getTime.days)
+      });
+
+      timerHours.forEach(hour => {
+         hour.textContent = addZero(getTime.hours)
+      });
+
+      timerMinutes.forEach(minute => (
+         minute.textContent = addZero(getTime.minutes)
+      ));
+
+      timerSeconds.forEach(second => {
+         second.textContent = addZero(getTime.seconds)
+      });
+
+      // Если время закончится то высветятся везде нули.
       if (getTime.timeRemaining <= 0) {
          clearInterval(timer1);
          timerDays.textContent = '00';
@@ -45,7 +59,6 @@ const timer = (deadLine) => {
    };
    const timer1 = setInterval(updateClock, 1000);
    updateClock()
-
 };
 
 export default timer
