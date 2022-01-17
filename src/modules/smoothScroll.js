@@ -18,7 +18,6 @@ const smoothScroll = () => {
    })
    // при прокрутке до самого верха scroll исчезает
    function scrollInvis() {
-      console.log(benefits.top)
       if (window.pageYOffset > benefits.top) {
          smoothScrollUp.style.opacity = 1;
       } else {
