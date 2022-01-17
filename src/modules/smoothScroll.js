@@ -1,12 +1,11 @@
 'use strict'
-
 const smoothScroll = () => {
-   let smoothScrollUp = document.querySelector('.smooth');
-   let benefits = document.getElementById('benefits').getBoundingClientRect();
+   const smoothScrollUp = document.querySelector('.smooth');
+   let benefits = document.getElementById('benefits').getBoundingClientRect(); // Вычисляем координаты
 
    // плавная прокрутка scrollа
    smoothScrollUp.addEventListener('click', (e) => {
-      e.preventDefault()
+      e.preventDefault();
 
       if (e.target.closest('.smooth')) {
          const blockId = e.target.closest('a[href*="#"]').getAttribute('href');
@@ -14,8 +13,8 @@ const smoothScroll = () => {
             behavior: 'smooth',
             block: 'start'
          });
-      }
-   })
+      };
+   });
    // при прокрутке до самого верха scroll исчезает
    function scrollInvis() {
       if (window.pageYOffset > benefits.top) {
@@ -23,11 +22,11 @@ const smoothScroll = () => {
       } else {
          smoothScrollUp.style.opacity = 0;
       }
-   }
+   };
 
    window.addEventListener('scroll', () => {
       scrollInvis()
    });
 
-}
+};
 export default smoothScroll

@@ -1,5 +1,4 @@
 'use strict'
-
 const swiper = () => {
    const swiper = new Swiper('.swiper', {
       navigation: {
@@ -13,12 +12,12 @@ const swiper = () => {
       },
       breakpoints: {
 
-         // Если ширина окна больше или ровна 576px
+         // Если ширина окна больше или равна 576px
          576: {
             slidesPerView: 3,
             spaceBetween: 40
          }
       }
    });
-}
+};
 export default swiper
