@@ -20,7 +20,7 @@ const modal = (open, close, popUp) => {
          body.style.overflow = 'hidden';
          overlay.style.display = 'block';
          animate({
-            duration: 1000,
+            duration: 600,
             timing(timeFraction) {
                return timeFraction;
             },
