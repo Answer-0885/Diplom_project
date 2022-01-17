@@ -5,6 +5,7 @@ import swiper from './modules/swiper'
 import smoothScroll from './modules/smoothScroll'
 import sliderServices from './modules/sliderServices'
 import sendForm from './modules/sendForm'
+import calc from './modules/calc'
 
 
 
@@ -15,6 +16,7 @@ timer('01:00 22 january 2022');
 swiper();
 smoothScroll();
 sliderServices();
+calc();
 sendForm({
    formID: 'form1',
    someElem: [{
