@@ -1703,7 +1703,7 @@ input.error {
   font-size: 24px;
 }
 .smooth{
-    opacity: 0;
+    display: none;
 }
 .smooth-scroll {
   position: fixed;

@@ -1,7 +1,7 @@
 'use strict'
 const smoothScroll = () => {
    const smoothScrollUp = document.querySelector('.smooth');
-   let benefits = document.getElementById('benefits').getBoundingClientRect(); // Вычисляем координаты
+
 
    // плавная прокрутка scrollа
    smoothScrollUp.addEventListener('click', (e) => {
@@ -17,10 +17,11 @@ const smoothScroll = () => {
    });
    // при прокрутке до самого верха scroll исчезает
    function scrollInvis() {
+      let benefits = document.getElementById('benefits').getBoundingClientRect(); // Вычисляем координаты
       if (window.pageYOffset > benefits.top) {
-         smoothScrollUp.style.opacity = 1;
+         smoothScrollUp.style.display = 'block';
       } else {
-         smoothScrollUp.style.opacity = 0;
+         smoothScrollUp.style.display = 'none';
       }
    };
 
