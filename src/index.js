@@ -4,6 +4,7 @@ import timer from './modules/timer'
 import swiper from './modules/swiper'
 import smoothScroll from './modules/smoothScroll'
 import sliderServices from './modules/sliderServices'
+import sendForm from './modules/sendForm'
 
 
 
@@ -14,3 +15,52 @@ timer('01:00 22 january 2022');
 swiper();
 smoothScroll();
 sliderServices();
+sendForm({
+   formID: 'form1',
+   someElem: [{
+      type: 'input',
+      id: 'calc-total'
+   }]
+});
+sendForm({
+   formID: 'form2',
+   someElem: [{
+      type: 'input',
+      id: 'calc-total'
+   }]
+});
+sendForm({
+   formID: 'form3',
+   someElem: [{
+      type: 'input',
+      id: 'calc-total'
+   }]
+});
+sendForm({
+   formID: 'form4',
+   someElem: [{
+      type: 'input',
+      id: 'calc-total'
+   }]
+});
+sendForm({
+   formID: 'form5',
+   someElem: [{
+      type: 'input',
+      id: 'calc-total'
+   }]
+});
+sendForm({
+   formID: 'form6',
+   someElem: [{
+      type: 'input',
+      id: 'calc-total'
+   }]
+});
+sendForm({
+   formID: 'form7',
+   someElem: [{
+      type: 'input',
+      id: 'calc-total'
+   }]
+});
