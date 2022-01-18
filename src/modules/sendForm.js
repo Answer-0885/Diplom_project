@@ -5,9 +5,10 @@ const sendForm = ({
 }) => {
    const form = document.getElementById(formID);
    const statusBlock = document.createElement('div')
-   const loadText = 'Загрузка...'
-   const errorText = 'Ошибка...'
-   const successText = 'Спасибо!Наш менеджер с вами свяжется.'
+   const loadText = 'Загрузка...';
+   statusBlock.style.color = 'DarkOrange';
+   const errorText = 'Ошибка...';
+   const successText = 'Спасибо!Наш менеджер с вами свяжется.';
 
    const validate = (list) => {
       let success = true;
@@ -25,7 +26,6 @@ const sendForm = ({
                return false;
             }
          }
-
       });
 
       return success;
@@ -47,21 +47,28 @@ const sendForm = ({
       const formData = new FormData(form)
       const formBody = {}
 
-      statusBlock.textContent = loadText
-      form.append(statusBlock)
+      //Если данные не валидны, то надпись "Загрузка" не появляется.
+      if (validate(formElements)) {
+         form.append(statusBlock)
+         statusBlock.textContent = loadText
+      } else {
+         statusBlock.textContent = "";
+      }
 
       formData.forEach((val, key) => {
          formBody[key] = val
       })
-
-      someElem.forEach(elem => {
-         const element = document.getElementById(elem.id)
-         if (elem.type === 'block') {
-            formBody[elem.id] = element.textContent
-         } else if (elem.type === 'input') {
-            formBody[elem.id] = element.value
-         }
-      })
+      // Если мы находимся не на странице с балконами, то данные калькулятора учитываться не будут
+      if (window.location.toString().indexOf('balkony.html') > 0) {
+         someElem.forEach(elem => {
+            const element = document.getElementById(elem.id);
+            if (elem.type === 'block') {
+               formBody[elem.id] = element.textContent;
+            } else if (elem.type === 'input') {
+               formBody[elem.id] = element.value;
+            }
+         });
+      }
 
       if (validate(formElements)) {
          sendData(formBody)
@@ -83,7 +90,7 @@ const sendForm = ({
 
             })
       } else {
-         alert('Данные не валидны!!!')
+         alert('Введите пожалуйста своя имя и номер телефона!')
       }
 
    }

@@ -13,6 +13,7 @@ import check from './modules/check'
 modal('button', 'header-modal__close', 'header-modal'); //"Заказать звонок"
 modal('btn2', 'services-modal__close', 'services-modal'); //"Наши услуги"
 modal('sertificate-document', 'img-modal__close', 'img-modal'); //"Сертификаты"
+modal('utp-button', 'header-modal__close', 'header-modal'); //Окно Узнай свою скидку
 timer('01:00 22 january 2022');
 swiper();
 smoothScroll();
