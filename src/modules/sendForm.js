@@ -8,22 +8,28 @@ const sendForm = ({
    const loadText = 'Загрузка...';
    statusBlock.style.color = 'DarkOrange';
    const errorText = 'Ошибка...';
-   const successText = 'Спасибо!Наш менеджер с вами свяжется.';
+   const successText = 'Спасибо! Наш менеджер с вами свяжется.';
 
+   // Проверка инпутов на правильность введённых данных
    const validate = (list) => {
       let success = true;
-
       list.forEach((item) => {
          if (item.classList.contains('form-name')) {
             if (!item.value.match(/^[а-яА-Я][а-яА-Я]+[а-яА-Я]?$/g)) {
                success = false;
-               return false;
+               item.classList.add('error');
+               setTimeout(() => {
+                  item.classList.remove('error');
+               }, 5000);
             }
          }
          if (item.classList.contains('form-phone')) {
             if (!item.value.match(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{6,}$/gi)) {
                success = false;
-               return false;
+               item.classList.add('error');
+               setTimeout(() => {
+                  item.classList.remove('error');
+               }, 5000);
             }
          }
       });
@@ -73,13 +79,19 @@ const sendForm = ({
       if (validate(formElements)) {
          sendData(formBody)
             .then(data => {
-               statusBlock.textContent = successText
-
                formElements.forEach(input => {
-                  input.value = ''
+                  input.value = '';
+                  input.classList.remove('error');
                });
+               statusBlock.textContent = successText
                setTimeout(() => {
                   form.removeChild(statusBlock);
+                  const headerModal = document.querySelector(`.header-modal`);
+                  const serviceModal = document.querySelector('.services-modal');
+                  const overlay = document.querySelector('.overlay');
+                  headerModal.style.display = 'none';
+                  serviceModal.style.display = 'none';
+                  overlay.style.display = 'none';
                }, 5000);
             })
             .catch(error => {
@@ -87,10 +99,9 @@ const sendForm = ({
                setTimeout(() => {
                   form.removeChild(statusBlock);
                }, 5000);
-
             })
       } else {
-         alert('Введите пожалуйста своя имя и номер телефона!')
+         alert('Введите пожалуйста своё имя и номер телефона!')
       }
 
    }
@@ -99,12 +110,10 @@ const sendForm = ({
       if (!form) {
          throw new Error('Верните форму на место, пожааааалуйста!')
       }
-
+      // Отправляет форму при нажатии на кнопку отправить
       form.addEventListener('submit', (event) => {
          event.preventDefault()
-
          submitForm()
-
       })
    } catch (error) {
       console.log(error.message);
