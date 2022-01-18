@@ -1,11 +1,13 @@
 'use strict'
 const sendForm = ({
-   formId,
+   formID,
    someElem = []
 }) => {
-
-   const form = document.getElementById(formId);
-
+   const form = document.getElementById(formID);
+   const statusBlock = document.createElement('div')
+   const loadText = 'Загрузка...'
+   const errorText = 'Ошибка...'
+   const successText = 'Спасибо!Наш менеджер с вами свяжется.'
 
    const validate = (list) => {
       let success = true;
@@ -16,16 +18,19 @@ const sendForm = ({
                success = false;
                return false;
             }
-         } else if (item.classList.contains('form-phone')) {
+         }
+         if (item.classList.contains('form-phone')) {
             if (!item.value.match(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{6,}$/gi)) {
                success = false;
                return false;
             }
          }
+
       });
 
       return success;
    };
+
    const sendData = (data) => {
       return fetch('https://jsonplaceholder.typicode.com/posts', {
          method: 'POST',
@@ -38,6 +43,7 @@ const sendForm = ({
 
    const submitForm = () => {
       const formElements = form.querySelectorAll('input')
+      console.log(formElements);
       const formData = new FormData(form)
       const formBody = {}
 
@@ -79,6 +85,7 @@ const sendForm = ({
       } else {
          alert('Данные не валидны!!!')
       }
+
    }
 
    try {
@@ -95,7 +102,6 @@ const sendForm = ({
    } catch (error) {
       console.log(error.message);
    }
-
 };
 
-export default sendForm
+export default sendForm;

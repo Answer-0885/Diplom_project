@@ -6,6 +6,7 @@ import smoothScroll from './modules/smoothScroll'
 import sliderServices from './modules/sliderServices'
 import sendForm from './modules/sendForm'
 import calc from './modules/calc'
+import check from './modules/check'
 
 
 
@@ -17,6 +18,7 @@ swiper();
 smoothScroll();
 sliderServices();
 calc();
+check();
 sendForm({
    formID: 'form1',
    someElem: [{
