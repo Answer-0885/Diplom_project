@@ -20,7 +20,7 @@ const sendForm = ({
                item.classList.add('error');
                setTimeout(() => {
                   item.classList.remove('error');
-               }, 5000);
+               }, 4000);
             }
          }
          if (item.classList.contains('form-phone')) {
@@ -29,14 +29,14 @@ const sendForm = ({
                item.classList.add('error');
                setTimeout(() => {
                   item.classList.remove('error');
-               }, 5000);
+               }, 4000);
             }
          }
       });
 
       return success;
    };
-
+   // Имитация работы с сервером
    const sendData = (data) => {
       return fetch('https://jsonplaceholder.typicode.com/posts', {
          method: 'POST',
@@ -49,7 +49,6 @@ const sendForm = ({
 
    const submitForm = () => {
       const formElements = form.querySelectorAll('input')
-      console.log(formElements);
       const formData = new FormData(form)
       const formBody = {}
 
@@ -60,7 +59,7 @@ const sendForm = ({
       } else {
          statusBlock.textContent = "";
       }
-
+      // этим циклом мы перебираем все инпуты, затем если где то есть заполненный инпут, мы помещаем его в объект formBody благодаря конструктору formData. И уже formBody мы отправляем.
       formData.forEach((val, key) => {
          formBody[key] = val
       })
@@ -79,26 +78,28 @@ const sendForm = ({
       if (validate(formElements)) {
          sendData(formBody)
             .then(data => {
+               // После отправки инпуты очищаются и сообщение об ошибке тоже.
                formElements.forEach(input => {
                   input.value = '';
                   input.classList.remove('error');
                });
                statusBlock.textContent = successText
+               // Модальные окна закрываются через 4 секунды после отправки. А также блок с надписями statusBlock   исчезает.            
                setTimeout(() => {
                   form.removeChild(statusBlock);
-                  const headerModal = document.querySelector(`.header-modal`);
+                  const headerModal = document.querySelector('.header-modal');
                   const serviceModal = document.querySelector('.services-modal');
                   const overlay = document.querySelector('.overlay');
                   headerModal.style.display = 'none';
                   serviceModal.style.display = 'none';
                   overlay.style.display = 'none';
-               }, 5000);
+               }, 4000);
             })
             .catch(error => {
                statusBlock.textContent = errorText
                setTimeout(() => {
                   form.removeChild(statusBlock);
-               }, 5000);
+               }, 4000);
             })
       } else {
          alert('Введите пожалуйста своё имя и номер телефона!')
