@@ -15,7 +15,7 @@ const sendForm = ({
       let success = true;
       list.forEach((item) => {
          if (item.classList.contains('form-name')) {
-            if (!item.value.match(/^[а-яА-Я][а-яА-Я]+[а-яА-Я]?$/g)) {
+            if (!item.value.match(/^[а-яА-Я\s][а-яА-Я\s]+[а-яА-Я\s]?$/g)) {
                success = false;
                item.classList.add('error');
                setTimeout(() => {
