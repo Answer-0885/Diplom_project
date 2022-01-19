@@ -7,8 +7,8 @@ const sliderServices = () => {
       },
       loop: true,
       autoplay: {
-         delay: 3000,
-         disableOnInteraction: false,
+         delay: 4000,
+         disableOnInteraction: true, // Если поставить false то открытие модальных окон будет работать не стабильно
       },
       breakpoints: {
 
