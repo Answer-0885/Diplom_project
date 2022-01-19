@@ -1,12 +1,10 @@
 'use strict'
 const smoothScroll = () => {
-   const smoothScrollUp = document.querySelector('.smooth');
-
+   const smooth = document.querySelector('.smooth');
 
    // плавная прокрутка scrollа
-   smoothScrollUp.addEventListener('click', (e) => {
+   smooth.addEventListener('click', (e) => {
       e.preventDefault();
-
       if (e.target.closest('.smooth')) {
          const blockId = e.target.closest('a[href*="#"]').getAttribute('href');
          document.querySelector(blockId).scrollIntoView({
@@ -16,12 +14,13 @@ const smoothScroll = () => {
       };
    });
    // при прокрутке до самого верха scroll исчезает
-   function scrollInvis() {
-      let benefits = document.getElementById('benefits').getBoundingClientRect(); // Вычисляем координаты
-      if (window.pageYOffset > benefits.top) {
-         smoothScrollUp.style.display = 'block';
+   const scrollInvis = () => {
+      let offerUtp = document.getElementById('offer-utp').getBoundingClientRect(); // Вычисляем координаты
+      console.log(offerUtp);
+      if (window.pageYOffset >= offerUtp.bottom) {
+         smooth.style.display = 'block';
       } else {
-         smoothScrollUp.style.display = 'none';
+         smooth.style.display = 'none';
       }
    };
 

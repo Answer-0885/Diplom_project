@@ -5,11 +5,11 @@ const sliderServices = () => {
          nextEl: '.services__arrow--right',
          prevEl: '.services__arrow--left',
       },
-      loop: true,
-      autoplay: {
-         delay: 4000,
-         disableOnInteraction: true, // Если поставить false то открытие модальных окон будет работать не стабильно
-      },
+      // loop: true,
+      // autoplay: {
+      //    delay: 4000,
+      //    disableOnInteraction: false,
+      // },
       breakpoints: {
 
          // Если ширина окна больше или равна 576px
