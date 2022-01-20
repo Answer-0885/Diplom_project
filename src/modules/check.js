@@ -16,13 +16,13 @@ const check = () => {
    inputName.forEach((input) => {
       input.addEventListener('blur', (e) => {
          let val = e.target.value;
-         val = val.replace(/[^а-яёA-Za-z]$/ig, '');
+         val = val.replace(/[^а-яёA-Za-z\s]$/ig, '');
          val = customTrim(val);
-         val = val.replace(/( |^)[ а-яёA-Za-z]/g, u => u.toUpperCase());
+         val = val.replace(/( |^)[ а-яёA-Za-z\s]/g, u => u.toUpperCase());
          e.target.value = val;
       });
       input.addEventListener('input', () => {
-         input.value = input.value.replace(/[^а-яёA-Za-z}]$/ig, '');
+         input.value = input.value.replace(/[^а-яёA-Za-z}\s]$/ig, '');
       });
    });
 
