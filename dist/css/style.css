@@ -1703,15 +1703,14 @@ input.error {
   font-size: 24px;
 }
 .smooth{
-    display: none;
-      z-index: 120;
+  display: block;
 }
 .smooth-scroll {
   position: fixed;
   right: 25px;
   bottom: 25px;
   transform: rotate(90deg);
-
+  z-index: 120;
 }
 
 @media (min-width: 576px) {

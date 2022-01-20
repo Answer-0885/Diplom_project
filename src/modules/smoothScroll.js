@@ -13,20 +13,24 @@ const smoothScroll = () => {
          });
       };
    });
-   // при прокрутке до самого верха scroll исчезает
-   const scrollInvis = () => {
-      // let offerUtp = document.getElementById('offer-utp').getBoundingClientRect(); // Вычисляем координаты
-      // console.log(offerUtp);
-      if (window.pageYOffset > 700) {
-         smooth.style.display = 'block';
-      } else {
-         smooth.style.display = 'none';
-      }
-   };
+
+   document.addEventListener('DOMContentLoaded', () => {
+      scrollInvis();
+   })
 
    window.addEventListener('scroll', () => {
       scrollInvis()
    });
+
+   // при прокрутке до самого верха scroll исчезает
+   const scrollInvis = () => {
+      if (window.pageYOffset < 500) {
+         smooth.style.display = 'none';
+      } else {
+         smooth.style.display = 'block';
+      }
+   };
+
 
 };
 export default smoothScroll
