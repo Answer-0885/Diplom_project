@@ -15,9 +15,9 @@ const smoothScroll = () => {
    });
    // при прокрутке до самого верха scroll исчезает
    const scrollInvis = () => {
-      let offerUtp = document.getElementById('offer-utp').getBoundingClientRect(); // Вычисляем координаты
-      console.log(offerUtp);
-      if (window.pageYOffset >= offerUtp.bottom) {
+      // let offerUtp = document.getElementById('offer-utp').getBoundingClientRect(); // Вычисляем координаты
+      // console.log(offerUtp);
+      if (window.pageYOffset > 700) {
          smooth.style.display = 'block';
       } else {
          smooth.style.display = 'none';

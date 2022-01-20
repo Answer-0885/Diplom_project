@@ -245,7 +245,7 @@ input.error {
 }
 #navigation-fixed:after {
   position: absolute;
-  z-index: 1030;
+  z-index: 30;
   bottom: -1px;
   content: "";
   display: block;
@@ -996,7 +996,7 @@ p.services-image_mobile {
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 1080;
+  z-index: 80;
 }
 .arcticmodal-container {
   overflow: auto;
@@ -1545,7 +1545,7 @@ input.error {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 10;
 }
 
 .header-modal--opened {
@@ -1553,7 +1553,7 @@ input.error {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 10;
 }
 
 .header-modal__close {
@@ -1579,7 +1579,7 @@ input.error {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 100;
+  z-index: 10;
 }
 
 .img-modal__close {
@@ -1704,12 +1704,14 @@ input.error {
 }
 .smooth{
     display: none;
+      z-index: 120;
 }
 .smooth-scroll {
   position: fixed;
   right: 25px;
   bottom: 25px;
   transform: rotate(90deg);
+
 }
 
 @media (min-width: 576px) {
