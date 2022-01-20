@@ -5,6 +5,7 @@ const swiper = () => {
          nextEl: '.benefits__arrow--right',
          prevEl: '.benefits__arrow--left',
       },
+      grabCursor: true,
       loop: true,
       autoplay: {
          delay: 2500,

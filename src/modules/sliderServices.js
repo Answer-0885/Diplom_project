@@ -5,6 +5,7 @@ const sliderServices = () => {
          nextEl: '.services__arrow--right',
          prevEl: '.services__arrow--left',
       },
+      grabCursor: true,
       // loop: true,
       // autoplay: {
       //    delay: 4000,
