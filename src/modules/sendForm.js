@@ -69,7 +69,7 @@ const sendForm = ({
             const element = document.getElementById(elem.id);
             if (elem.type === 'block') {
                formBody[elem.id] = element.textContent;
-            } else if (elem.type === 'input') {
+            } else if (elem.type === 'input' && element.value !== "0" && element.value !== "") {
                formBody[elem.id] = element.value;
             }
          });
