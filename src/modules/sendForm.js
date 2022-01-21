@@ -90,9 +90,11 @@ const sendForm = ({
                   const headerModal = document.querySelector('.header-modal');
                   const serviceModal = document.querySelector('.services-modal');
                   const overlay = document.querySelector('.overlay');
+                  const body = document.querySelector('body');
                   headerModal.style.display = 'none';
                   serviceModal.style.display = 'none';
                   overlay.style.display = 'none';
+                  body.style.overflow = 'auto'
                }, 4000);
             })
             .catch(error => {

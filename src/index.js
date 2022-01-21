@@ -14,7 +14,7 @@ modal('button', 'header-modal__close', 'header-modal'); //"Заказать зв
 modal('service-button', 'services-modal__close', 'services-modal'); //"Наши услуги"
 modal('sertificate-document', 'img-modal__close', 'img-modal'); //"Сертификаты"
 modal('utp-button', 'header-modal__close', 'header-modal'); //Окно Узнай свою скидку
-timer('01:00 22 january 2022');;
+timer('23:59 24 january 2022');;
 swiper();
 smoothScroll();
 sliderServices()

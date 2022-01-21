@@ -6,6 +6,8 @@ const sliderServices = () => {
          prevEl: '.services__arrow--left',
       },
       grabCursor: true,
+      autoHeight: false,
+      slidesPerColumn: 2,
       // loop: true,
       // autoplay: {
       //    delay: 4000,

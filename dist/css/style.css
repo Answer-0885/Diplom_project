@@ -1633,6 +1633,14 @@ input.error {
   justify-content: space-between;
   margin: 0 auto;
 }
+
+/* @media (max-width: 1199px){
+  slider-service{ 
+    display:flex;
+    width: 100%;
+    flex-direction:column;
+  }
+} */
 .swiper-slide {
   width: 100%;
   display: flex;

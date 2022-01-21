@@ -49,12 +49,20 @@ const timer = (deadLine) => {
       });
 
       // Если время закончится то высветятся везде нули.
-      if (getTime.timeRemaining <= 0) {
+      if (getTime.timeRemaining <= '00') {
          clearInterval(timer1);
-         timerDays.textContent = '00';
-         timerHours.textContent = '00';
-         timerMinutes.textContent = '00';
-         timerSeconds.textContent = '00';
+         timerDays.forEach(day => {
+            day.textContent = '00'
+         });
+         timerHours.forEach(hour => {
+            hour.textContent = '00'
+         });
+         timerMinutes.forEach(minute => (
+            minute.textContent = '00'
+         ));
+         timerSeconds.forEach(second => {
+            second.textContent = '00'
+         });
       }
    };
    const timer1 = setInterval(updateClock, 1000);

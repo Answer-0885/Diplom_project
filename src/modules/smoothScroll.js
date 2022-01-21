@@ -16,7 +16,7 @@ const smoothScroll = () => {
 
    document.addEventListener('DOMContentLoaded', () => {
       scrollInvis();
-   })
+   });
 
    window.addEventListener('scroll', () => {
       scrollInvis()
