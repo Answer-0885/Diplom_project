@@ -6,8 +6,8 @@ const sliderServices = () => {
          prevEl: '.services__arrow--left',
       },
       grabCursor: true,
-      autoHeight: false,
-      slidesPerColumn: 2,
+
+
       // loop: true,
       // autoplay: {
       //    delay: 4000,
@@ -17,8 +17,10 @@ const sliderServices = () => {
 
          // Если ширина окна больше или равна 576px
          576: {
+            autoHeight: false,
             slidesPerView: 2,
-            spaceBetween: 40
+            spaceBetween: 40,
+            slidesPerColumn: 2
          }
       }
    });

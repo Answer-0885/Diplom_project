@@ -14,6 +14,7 @@ modal('button', 'header-modal__close', 'header-modal'); //"Заказать зв
 modal('service-button', 'services-modal__close', 'services-modal'); //"Наши услуги"
 modal('sertificate-document', 'img-modal__close', 'img-modal'); //"Сертификаты"
 modal('utp-button', 'header-modal__close', 'header-modal'); //Окно Узнай свою скидку
+modal('navbar-toggle', 'header-modal__close', 'navbar-collapse-fixed'); // Бургер меню
 timer('23:59 24 january 2022');;
 swiper();
 smoothScroll();

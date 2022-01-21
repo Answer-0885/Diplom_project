@@ -4,9 +4,9 @@ const sendForm = ({
    someElem = []
 }) => {
    const form = document.getElementById(formID);
-   const statusBlock = document.createElement('div')
-   const loadText = 'Загрузка...';
+   const statusBlock = document.createElement('div');
    statusBlock.style.color = 'DarkOrange';
+   const loadText = 'Загрузка...';
    const errorText = 'Ошибка...';
    const successText = 'Спасибо! Наш менеджер с вами свяжется.';
 

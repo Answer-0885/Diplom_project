@@ -1641,7 +1641,11 @@ input.error {
     flex-direction:column;
   }
 } */
+/* .swiper-wrapper{
+  height: 600px;
+} */
 .swiper-slide {
+  /* height: calc((100% - 30px)/2); */
   width: 100%;
   display: flex;
   justify-content: space-around;
