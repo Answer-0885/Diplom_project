@@ -6,8 +6,6 @@ const sliderServices = () => {
          prevEl: '.services__arrow--left',
       },
       grabCursor: true,
-
-
       // loop: true,
       // autoplay: {
       //    delay: 4000,
@@ -17,11 +15,15 @@ const sliderServices = () => {
 
          // Если ширина окна больше или равна 576px
          576: {
-            autoHeight: false,
+            autoHeight: true,
+            //slidesPerColumn: 2,
             slidesPerView: 2,
-            spaceBetween: 40,
-            slidesPerColumn: 2
-         }
+            spaceBetween: 5,
+            // slidesPerGroup: 1,
+            // centredSlides: true
+         },
+
+
       }
    });
 };
