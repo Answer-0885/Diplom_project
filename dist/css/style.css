@@ -306,7 +306,7 @@ input.error {
   background-repeat: no-repeat;
   height: 16px;
   display: inline-block;
-  float: left;
+  /* float: left; */
   margin-right: 9px;
 }
 .menu-window {
@@ -682,9 +682,6 @@ input.error {
 
 
 
-
-
-
 .services-image_overlay {
   position: absolute;
   top: 0;
@@ -871,8 +868,7 @@ p.services-image_mobile {
   border-radius: 100%;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
 }
-.about-wrap {
-}
+
 .about-inner:after {
   position: absolute;
   content: "";
@@ -938,7 +934,7 @@ p.services-image_mobile {
   width: 30px;
   height: 30px;
   display: inline-block;
-  float: left;
+  /* float: left; */
   margin-right: 15px;
 }
 .contact-phone {
@@ -961,8 +957,6 @@ p.services-image_mobile {
 .footer-logotype {
   position: absolute;
   height: 100px;
-}
-.footer-copyright {
 }
 .footer-copyright span {
   color: #ffb135;
