@@ -11,9 +11,9 @@ const modal = (open, close, popUp) => {
    // Модальные окна
    const modal = document.querySelector(`.${popUp}`);
 
+
    //Открываем модальные окна
    modalOpen.forEach(btn => {
-
       btn.addEventListener('click', (e) => {
          e.preventDefault();
          modal.style.display = 'block';
@@ -39,5 +39,6 @@ const modal = (open, close, popUp) => {
          overlay.style.display = 'none';
       };
    });
+
 };
 export default modal

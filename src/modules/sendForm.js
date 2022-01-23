@@ -5,6 +5,7 @@ const sendForm = ({
 }) => {
    const form = document.getElementById(formID);
    const statusBlock = document.createElement('div');
+   const burgerMenu = document.querySelector('.navigation-fixed');
    statusBlock.style.color = 'DarkOrange';
    const loadText = 'Загрузка...';
    const errorText = 'Ошибка...';
@@ -93,6 +94,7 @@ const sendForm = ({
                   const body = document.querySelector('body');
                   headerModal.style.display = 'none';
                   serviceModal.style.display = 'none';
+                  burgerMenu.style.display = 'none';
                   overlay.style.display = 'none';
                   body.style.overflow = 'auto'
                }, 4000);

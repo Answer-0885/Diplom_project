@@ -18,7 +18,7 @@ const sliderServices = () => {
             autoHeight: true,
             //slidesPerColumn: 2,
             slidesPerView: 2,
-            spaceBetween: 5,
+            // spaceBetween: 5,
             // slidesPerGroup: 1,
             // centredSlides: true
          },
