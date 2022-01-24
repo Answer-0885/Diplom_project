@@ -13,11 +13,14 @@ import menu from './modules/menu'
 
 modal('button', 'header-modal__close', 'header-modal'); //"Заказать звонок"
 modal('top-btn', 'header-modal__close', 'header-modal'); //"Заказать звонок из бургер-меню"
-modal('service-button', 'services-modal__close', 'services-modal'); //"Наши услуги"
 modal('sertificate-document', 'img-modal__close', 'img-modal'); //"Сертификаты"
 modal('utp-button', 'header-modal__close', 'header-modal'); //Окно Узнай свою скидку
 modal('open-burger', 'close-burger', 'navigation-fixed'); // Бургер меню
-timer('23:59 24 january 2022');;
+modal('service-button-1', 'services-modal__close', 'services-modal-1'); //"Наши услуги-1"
+modal('service-button-2', 'services-modal__close', 'services-modal-2'); //"Наши услуги-2"
+modal('service-button-3', 'services-modal__close', 'services-modal-3'); //"Наши услуги-3"
+modal('service-button-4', 'services-modal__close', 'services-modal-4'); //"Наши услуги-4"
+timer('23:59 24 january 2022');
 swiper();
 smoothScroll();
 sliderServices()
@@ -68,6 +71,27 @@ sendForm({
 });
 sendForm({
    formID: 'form7',
+   someElem: [{
+      type: 'input',
+      id: 'calc-total'
+   }]
+});
+sendForm({
+   formID: 'form8',
+   someElem: [{
+      type: 'input',
+      id: 'calc-total'
+   }]
+});
+sendForm({
+   formID: 'form9',
+   someElem: [{
+      type: 'input',
+      id: 'calc-total'
+   }]
+});
+sendForm({
+   formID: 'form10',
    someElem: [{
       type: 'input',
       id: 'calc-total'

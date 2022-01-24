@@ -553,7 +553,10 @@ input.error {
   height: 220px;
   position: absolute;
 }
-.service-button {
+.service-button-1,
+.service-button-2,
+.service-button-3,
+.service-button-4 {
   position: absolute;
   bottom: 20px;
 }
@@ -579,7 +582,10 @@ input.error {
   .service-text h3{
     font-size: 20px;
   }
-  .service-button {
+  .service-button-1,
+  .service-button-2,
+  .service-button-3,
+  .service-button-4 {
     right: 10px;
     bottom: 20px;
  }
@@ -589,7 +595,10 @@ input.error {
     font-size: 16px;
     margin-bottom: 5px;
   }
-  .service-button {
+  .service-button-1,
+  .service-button-2,
+  .service-button-3,
+  .service-button-4 {
     left: 10px;
  }
 }
@@ -622,10 +631,16 @@ input.error {
    width:90%;
    height: 100%;;
  }
-  .service-button{
+  .service-button-1,
+  .service-button-2,
+  .service-button-3,
+  .service-button-4{
     width: 100%;
   }
-  .service-button a{
+  .service-button-1 a,
+  .service-button-2 a,
+  .service-button-3 a,
+  .service-button-4 a{
     width: 55%;
     font-size: 15px;
     padding-left: 20px;
@@ -647,10 +662,16 @@ input.error {
    .service-text{
       margin-left: 165px;
   }
-    .service-button{
+  .service-button-1,
+  .service-button-2,
+  .service-button-3,
+  .service-button-4{
       margin-left: 5px;
   }
-    .service-button a{
+  .service-button-1 a,
+  .service-button-2 a,
+  .service-button-3 a,
+  .service-button-4 a{
       width: 47%;
       font-size: 12px;
       height: auto;
@@ -679,7 +700,10 @@ input.error {
    .service-block {
       margin: 15px 5px;
  }
-    .service-button{
+  .service-button-1,
+  .service-button-2,
+  .service-button-3,
+  .service-button-4{
       bottom: 5px;
   }
 }
@@ -1479,7 +1503,10 @@ p.services-image_mobile {
   height: 220px;
   position: absolute;
 }
-.service-button {
+.service-button-1,
+.service-button-2,
+.service-button-3,
+.service-button-4 {
   margin-left: 130px;
 
 }
@@ -1625,6 +1652,7 @@ p.services-image_mobile {
 .box-modal {
   display: none;
 }
+
 * {
   outline: none !important;
 }
@@ -1729,7 +1757,10 @@ input.error {
   display: none;
 }
 
-.services-modal {
+.services-modal-1,
+.services-modal-2,
+.services-modal-3,
+.services-modal-4 {
   display: none;
 }
 

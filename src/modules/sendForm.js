@@ -5,7 +5,6 @@ const sendForm = ({
 }) => {
    const form = document.getElementById(formID);
    const statusBlock = document.createElement('div');
-   const burgerMenu = document.querySelector('.navigation-fixed');
    statusBlock.style.color = 'DarkOrange';
    const loadText = 'Загрузка...';
    const errorText = 'Ошибка...';
@@ -61,8 +60,8 @@ const sendForm = ({
          statusBlock.textContent = "";
       }
       // этим циклом мы перебираем все инпуты, затем если где то есть заполненный инпут, мы помещаем его в объект formBody благодаря конструктору formData. И уже formBody мы отправляем.
-      formData.forEach((val, key) => {
-         formBody[key] = val
+      formData.forEach((value, key) => {
+         formBody[key] = value;
       })
       // Если мы находимся не на странице с балконами, то данные калькулятора учитываться не будут
       if (window.location.toString().indexOf('balkony.html') > 0) {
@@ -81,7 +80,9 @@ const sendForm = ({
             .then(data => {
                // После отправки инпуты очищаются и сообщение об ошибке тоже.
                formElements.forEach(input => {
-                  input.value = '';
+                  // Очищаются все инпуты кроме класса value
+                  if (!input.classList.contains('value'))
+                     input.value = '';
                   input.classList.remove('error');
                });
                statusBlock.textContent = successText
@@ -89,11 +90,18 @@ const sendForm = ({
                setTimeout(() => {
                   form.removeChild(statusBlock);
                   const headerModal = document.querySelector('.header-modal');
-                  const serviceModal = document.querySelector('.services-modal');
+                  const burgerMenu = document.querySelector('.navigation-fixed');
+                  const serviceModal_1 = document.querySelector('.services-modal-1');
+                  const serviceModal_2 = document.querySelector('.services-modal-2');
+                  const serviceModal_3 = document.querySelector('.services-modal-3');
+                  const serviceModal_4 = document.querySelector('.services-modal-4');
                   const overlay = document.querySelector('.overlay');
                   const body = document.querySelector('body');
                   headerModal.style.display = 'none';
-                  serviceModal.style.display = 'none';
+                  serviceModal_1.style.display = 'none';
+                  serviceModal_2.style.display = 'none';
+                  serviceModal_3.style.display = 'none';
+                  serviceModal_4.style.display = 'none';
                   burgerMenu.style.display = 'none';
                   overlay.style.display = 'none';
                   body.style.overflow = 'auto'
