@@ -1,9 +1,9 @@
 'use strict'
 const timer = (deadLine) => {
-   const timerDays = document.querySelectorAll('.count_1>span');
-   const timerHours = document.querySelectorAll('.count_2>span');
-   const timerMinutes = document.querySelectorAll('.count_3>span');
-   const timerSeconds = document.querySelectorAll('.count_4>span');
+   const timerDays = document.querySelectorAll('.count_1');
+   const timerHours = document.querySelectorAll('.count_2');
+   const timerMinutes = document.querySelectorAll('.count_3');
+   const timerSeconds = document.querySelectorAll('.count_4');
 
    const getTimeRemaining = () => {
       let dateStop = new Date(deadLine).getTime();
@@ -13,6 +13,7 @@ const timer = (deadLine) => {
       let hours = Math.floor((timeRemaining / 60 / 60) % 24);
       let minutes = Math.floor((timeRemaining / 60) % 60);
       let seconds = Math.floor(timeRemaining % 60)
+
 
       return {
          timeRemaining,
@@ -31,26 +32,38 @@ const timer = (deadLine) => {
             return '0' + num;
          } else return num;
       };
+      //Функция для проверки окончания подходящего для каждой цифры на табло
+      let wordForm = function (num, word) {
+         const cases = [2, 0, 1, 1, 1, 2];
+         return word[(num % 100 > 4 && num % 100 < 20) ? 2 : cases[(num % 10 < 5) ? num % 10 : 5]]; // проверка, чтобы подобрать правильное окончание.
+      }
+
+      // Варианты окончаний
+      let resultDays = wordForm(getTime.days, [' День: ', ' Дня: ', ' Дней: ']);
+      let resultHours = wordForm(getTime.hours, [' Час: ', ' Часа: ', ' Часов: ']);
+      let resultMins = wordForm(getTime.minutes, [' Минута: ', ' Минуты: ', ' Минут: ']);
+      let resultSec = wordForm(getTime.seconds, [' Секунда: ', ' Секунды: ', ' Секунд: ']);
+
 
       timerDays.forEach(day => {
-         day.textContent = addZero(getTime.days)
+         day.innerHTML = `${resultDays}<br><span>${addZero(getTime.days)}</span>`
       });
 
       timerHours.forEach(hour => {
-         hour.textContent = addZero(getTime.hours)
+         hour.innerHTML = `${resultHours}<br><span>${addZero(getTime.hours)}</span>`
       });
 
       timerMinutes.forEach(minute => (
-         minute.textContent = addZero(getTime.minutes)
+         minute.innerHTML = `${resultMins}<br><span>${addZero(getTime.minutes)}</span>`
       ));
 
       timerSeconds.forEach(second => {
-         second.textContent = addZero(getTime.seconds)
+         second.innerHTML = `${resultSec}<br><span>${addZero(getTime.seconds)}</span>`
       });
 
       // Если время закончится то высветятся везде нули.
       if (getTime.timeRemaining <= '00') {
-         clearInterval(timer1);
+         clearInterval(timeIsUp);
          timerDays.forEach(day => {
             day.textContent = '00'
          });
@@ -65,7 +78,7 @@ const timer = (deadLine) => {
          });
       }
    };
-   const timer1 = setInterval(updateClock, 1000);
+   const timeIsUp = setInterval(updateClock, 1000);
    updateClock()
 };
 

@@ -20,7 +20,7 @@ modal('service-button-1', 'services-modal__close', 'services-modal-1'); //"На�
 modal('service-button-2', 'services-modal__close', 'services-modal-2'); //"Наши услуги-2"
 modal('service-button-3', 'services-modal__close', 'services-modal-3'); //"Наши услуги-3"
 modal('service-button-4', 'services-modal__close', 'services-modal-4'); //"Наши услуги-4"
-timer('23:59 31 december 2022');
+timer('23:59 31 january 2022');
 swiper();
 smoothScroll();
 sliderServices()
