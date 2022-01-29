@@ -59,12 +59,13 @@ const sendForm = ({
       } else {
          statusBlock.textContent = "";
       }
-      // этим циклом мы перебираем все инпуты, затем если где то есть заполненный инпут, мы помещаем его в объект formBody благодаря конструктору formData. И уже formBody мы отправляем.
+      // этим циклом мы перебираем все инпуты, затем если где то есть заполненный инпут, мы помещаем его в объект formBody благодаря конструктору formData. И уже formBody мы отправляем, где ключом(key) является атрибут name Инпута, а значением(value) является value инпутов.
       formData.forEach((value, key) => {
          formBody[key] = value;
       })
       // Если мы находимся не на странице с балконами, то данные калькулятора учитываться не будут
       if (window.location.toString().indexOf('balkony.html') > 0) {
+         // Мы перебираем инпут калькулятора при каждой отправке формы. И если в нём есть значение, то мы их добавляем к данным формы при отправке на сервер.
          someElem.forEach(elem => {
             const element = document.getElementById(elem.id);
             if (elem.type === 'block') {
@@ -78,7 +79,7 @@ const sendForm = ({
       if (validate(formElements)) {
          sendData(formBody)
             .then(data => {
-               // После отправки инпуты очищаются и сообщение об ошибке тоже.
+               // После отправки все инпуты перебираются и очищаются, и сообщение об ошибке тоже.
                formElements.forEach(input => {
                   // Очищаются все инпуты кроме класса value
                   if (!input.classList.contains('value'))
