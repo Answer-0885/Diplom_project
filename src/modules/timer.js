@@ -66,15 +66,19 @@ const timer = (deadLine) => {
          clearInterval(timeIsUp);
          timerDays.forEach(day => {
             day.textContent = '00'
+            day.style.fontSize = '32px'
          });
          timerHours.forEach(hour => {
             hour.textContent = '00'
+            hour.style.fontSize = '32px'
          });
-         timerMinutes.forEach(minute => (
+         timerMinutes.forEach(minute => {
             minute.textContent = '00'
-         ));
+            minute.style.fontSize = '32px'
+         });
          timerSeconds.forEach(second => {
             second.textContent = '00'
+            second.style.fontSize = '32px'
          });
       }
    };
